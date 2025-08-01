@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-body-light sticky-top border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-1" href="/listings/home"><h3>SkinInn</h3></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-2" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/listings/home">Home</a>
+          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link" href="/listings/new">New Product</a>
+        </div>
+        
+
+        <div class="navbar-nav ms-auto ">
+            <!-- START: Updated Search Form -->
+            <form class="d-flex" action="/listings/search" method="GET">
+              <input 
+                class="form-control me-2 col-6 " 
+                type="search" 
+                placeholder="Search products, brands..." 
+                aria-label="Search"
+                name="q" 
+              />
+              <button class="btn btn-success me-4" type="submit">Search</button>
+            </form>
+            <!-- END: Updated Search Form -->
+        </div>
+
+        <div class="navbar-nav ms-auto">
+          <% if(!currentUser) { %>
+          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" href="/signup">Signup</a>
+          <% } else { %>
+          <a class="nav-link" href="#"><i><%= currentUser.username %></i></a>
+          <a class="nav-link" href="/logout"><i class="fa-solid fa-power-off"></i></a>
+          <a class="nav-link" href="/cart/<%= currentUser._id  %>"><i class="fa-solid fa-cart-shopping"></i></a>
+          <% } %>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+</nav>

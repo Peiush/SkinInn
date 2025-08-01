@@ -1,0 +1,272 @@
+<% layout("/layouts/boilerplate") %>
+ <body>
+ <!-- adding a image slider--> 
+  <div class="container image-slider col-12 mt-2">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-current="true" class="active"  aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/images/p1.jpg" class="d-block w-100"  alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/img3.png" class="d-block w-100 " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/neuu.png" class="d-block w-100"  alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/img22.png" class="d-block w-100 " alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon btn btn-dark" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon btn btn-dark" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="category container col-12 mt-5 ">
+      <div class="category-title">
+        <h3>Shop By Skin Types </h3>
+      </div>
+
+      <div class="category-list ">
+        <a href="/skinType/oily" class="text-decoration-none text-dark">
+        <div class="cardd" style="width: 18rem; height: 18rem;">
+          <img src="/images/oily1.jpg" class="card-img-top" alt="oily">
+          <div class="cardd-body">
+            <div class="card-text text-center mt-2">
+             <h4>Oily</h4></div>
+          </div>
+        </div>
+        </a>
+       
+        <a href="/skinType/dry" class="text-decoration-none text-dark">
+        <div class="cardd " style="width: 18rem; height: 20rem;">
+          <img src="/images/dry.png" class="card-img-top" alt="...">
+          <div class="cardd-body ">
+            <div class="card-text text-center mt-2">
+              <h4>Dry</h4></div>
+          </div>
+        </div>
+        </a>
+       
+        <a href="/skinType/combination" class="text-decoration-none text-dark">
+        <div class="cardd" style="width: 18rem; height: 20rem;">
+          <img src="/images/combination1.png" class="card-img-top" alt="...">
+          <div class="cardd-body ">
+            <div class="card-text text-center mt-2">
+              <h4>Combination</h4></div>
+          </div>
+        </div>
+        </a>
+
+        <a href="/skinType/sensitive" class="text-decoration-none text-dark">
+        <div class="cardd " style="width: 18rem; height: 20rem;">
+          <img src="/images/sensitive.jpg" class="card-img-top" alt="...">
+          <div class="cardd-body">
+            <div class="card-text text-center mt-2">
+              <h4>Sensitive</h4></div>
+          </div>
+        </div>
+        </a>
+      </div>
+  </div>
+  
+
+  <style>
+    .concern-list {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none; /* For Firefox */
+      scrollbar-color: none; /* For Firefox */
+    }
+
+    .concern-list::-webkit-scrollbar {
+      height: 8px; /* Horizontal scrollbar height */
+    }
+
+    .concern-list::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+
+    .concern-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .carddd {
+      flex: 0 0 auto; /* Prevent shrinking and allow horizontal scrolling */
+      margin-right: 10px;
+
+    }
+  </style>
+   
+  <div class="concern-section container col-12 mt-3">
+    <div class="concern-title ">
+      <h3>Shop By Skin Concerns</h3>
+    </div>
+   
+  <div class="concern-list-wrapper">
+    <div class="concern-scroll-wrapper d-flex align-items-center">
+      <!-- <button id="scroll-left" class="btn btn-primary me-2">&#9664;</button> -->
+      <div class="concern-list d-flex overflow-auto">
+
+        <a href="/skinConcern/Wrinkles"  class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/5.jpeg" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+          </div>
+        </div>
+        </a>
+
+        <a href="/skinConcern/redness"  class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/4.jpeg" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+          </div>
+        </div>
+        </a>
+
+       <a href="/skinConcern/acne" class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/1.jpeg" alt="">
+          <div class="card-body">
+            <div class="card-title text-center"></div>
+          </div>
+        </div>
+        </a>
+
+        <a href="/skinConcern/Darkcircles"  class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/9.png" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+          </div>
+        </div>
+        </a>
+
+
+        <a href="/SkinConcern/dullness" class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/10.png" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+          </div>
+        </div>
+        </a>
+
+        <a href="/skinConcern/sunProtection" class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/2.jpeg" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+          </div>
+        </div>
+        </a>
+       
+        <a href="/skinConcern/pores" class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/7.jpeg" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+          </div>
+        </div>
+        </a>
+
+        <a href="/skinConcern/darkSpots" class="text-decoration-none text-dark">
+        <div class="carddd mt-4" style="width: 12rem; height: 6rem;">
+          <img src="/images/8.jpeg" alt="">
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+          </div>
+        </div>
+        </a>
+
+
+       
+
+        
+      <!-- </div>
+      <button id="scroll-right" class="btn btn-primary ms-2">&#9654;</button>
+    </div> -->
+  </div>
+  </div>
+  </div>
+  </div>
+
+ 
+  <div class="dec container">
+     <div class="desc-title text-center mt-5" style="margin-left: -10px;">
+      <h3>Why Choose SkinInn?</h3>
+     </div>
+    
+     <div class="information container col-12 mt-3" style="margin-left:10px;">
+        <div class="card-info" style="width: 23rem;">
+          <div class="card-body">
+            <h5 class="card-title">Dermatologist<br>Recommended Skincare</h5>
+            <p class="card-text">We partner closely with dermatologists and healthcare professionals, conducting over 600 clinical studies involving more than 35,000 patients.</p>
+           
+          </div>
+        </div>
+      <div class="card-info" style="width: 23rem;">
+        <div class="card-body">
+          <h5 class="card-title">Experts in Sensitive Skin</h5>
+          <p class="card-text">Our products are crafted specifically for individuals with sensitive skin and are designed to support dermatologists in addressing their patients' skin concerns.</p>
+        </div>
+      </div>
+
+        <div class="card-info" style="width: 23rem;">
+          <div class="card-body">
+            <h5 class="card-title">Science-Backed Skincare Solutions</h5>
+            <p class="card-text">Our cleansers and moisturizers are backed by scientific research and clinical studies. This commitment ensures we provide the most effective blend of ingredients </p>
+           
+          </div>
+        </div>
+
+        <div class="card-info" style="width: 23rem;">
+          <div class="card-body">
+            <h5 class="card-title">Formulated with Clean Ingredients</h5>
+            <p class="card-text">We prioritize skin health by using readily biodegradable formulas that are free of parabens, sulfates, and animal-origin ingredients. </p>
+           
+          </div>
+        </div>
+
+        <div class="card-info" style="width: 23rem;">
+          <div class="card-body">
+            <h5 class="card-title">Customer-Focused Experience</h5>
+            <p class="card-text">We listen to our community at every step from product innovation to everyday support. Your feedback guides our improvements, ensuring every formula meets real needs.</p>
+            
+          </div>
+        </div>
+
+        <div class="card-info" style="width: 23rem;">
+          <div class="card-body">
+            <h5 class="card-title">Sustainable Practices</h5>
+            <p class="card-text">Our commitment goes beyond healthy skin: we’re equally devoted to a healthy planet. We use recyclable packaging, ethically source ingredients</p>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+
+  
+  
+  
+
+
+ </body>

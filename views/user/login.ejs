@@ -1,0 +1,44 @@
+<%- layout("/layouts/boilerplate") %>
+
+<body>
+
+        <div class="col-md-6 offset-md-3 mt-5">
+            <strong><h1 class="text-center new-title">Login</h1></strong>
+            <p class="text-center new-subtitle">Welcome back! Please log in to continue.</p>
+        </div>
+
+        <div class="col-md-6 offset-3 p-3 editt-box mt-4">
+            <form action="/login" method="post" novalidate class="needs-validation">
+                <div class="ms-3 me-3">
+                    <label for="username" class="form-label mt-3">Username</label>
+                    <input type="username" name="username" id="username" placeholder="Enter Username" class="form-control" required> 
+                </div>
+
+                <div class="ms-3 me-3">
+                    <label for="password" class="form-label mt-3">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Password" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4 ms-3 mb-3">Login</button>
+            </form>
+        </div>
+        <div class="text-center mt-3">
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+
+
+    </div>
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

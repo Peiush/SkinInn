@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="container ">
+  <!-- Show search heading if a search query exists -->
+  <% if (typeof searchQuery !== "undefined") { %>
+    <h3>Search results for "<%= searchQuery %>"</h3>
+  <% } else { %>
+    <div class="text-center mt-2">
+      <h1 class="text-center mt-2">All Products</h1>
+      <p class="text-center">Explore our range of products.</p>
+    </div>
+  <% } %>
+
+  <!-- Show message if no matching products found -->
+  <% let listingsToShow = typeof listings !== "undefined" ? listings : allListings; %>
+  <% if (listingsToShow && listingsToShow.length === 0) { %>
+    <p>No products found!</p>
+  <% } %>
+
+
+
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 mt-4">
+    <% for(let listing of listingsToShow) { %>
+      <div class="col d-flex justify-content-center">
+        <a href="/listings/<%= listing.id %>" class="text-decoration-none text-dark">
+          <div class="card border" style="width: 20rem; max-height: 570px;">
+            <img 
+              src="<%= listing.image.url %>" 
+              class="card-img-top mt-1" 
+              style="max-height: 250px; object-fit: contain;" 
+              alt="Product-img"
+            >
+            <div class="card-body">
+              <h5><strong><%= listing.name %></strong></h5>
+              <p class="card-text">&#8377;<%= listing.price %></p>
+              <% if(currentUser && currentUser._id) { %>
+              <form action="/cart/<%=currentUser._id%>/items" method="post">
+                <input type="hidden" name="listingId" value="<%= listing.id %>">
+                <input type="hidden" name="listingName" value="<%= listing.name %>">
+                <input type="hidden" name="listingPrice" value="<%= listing.price %>">
+                <button class="btn btn-dark btn-sm add">Add to Cart</button>
+              </form>  
+              <% }  %>
+           </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>

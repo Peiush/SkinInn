@@ -1,0 +1,101 @@
+<%- layout("layouts/boilerplate") %>
+
+<body>
+    <div class="col-8 offset-2 ">
+        <h1 class="text-center new-title">Welcome to the Product Listings Page</h1>
+        <p class="text-center new-subtitle"> list your Proudct for others to see!</p>
+    </div>
+
+   
+  <div class="col-md-6 offset-md-3 mt-4 new-box">
+  <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data" >
+    <label for="name" class="form-label">Product Name</label>
+    <input type="text" name="name" id="name" placeholder="Enter Product Name" class="form-control" required>
+
+    <label for="brand" class="form-label mt-3">Brand Name</label>
+    <input type="text" name="brand" id="brand" placeholder="Enter Product Brand " class="form-control" required>                         
+
+    <label for="description" class="form-label mt-3">Product Description</label>
+    <textarea name="description" id="description" placeholder="Enter Product description" cols="30" class="form-control" required></textarea>
+   
+
+    <label for="price" class="form-label mt-3" >Product Price</label>
+    <input type="text" name="price" id="price" placeholder="Enter Proudct Price" class="form-control" required>
+     
+   
+
+    <label for="image" class="form-label mt-3 ">Product Image</label>
+    <input type="file" name="image" id="image" placeholder="Product Image" class="form-control" required>
+                                
+    <label for="whatMakesItPotent" class="form-label mt-3 ">What Makes It Potent</label>
+    <textarea name="whatMakesItPotent" id="whatMakesItPotent" placeholder=" what Makes your product Potent" cols="30" class="form-control new-textbox" required></textarea>
+
+    <label for="volume" class="form-label mt-3">Product Volume</label>
+    <input type="text" name="volume" id="volume" placeholder="Product Volume" class="form-control" required>
+   
+    
+
+    <label for="category" class="form-label mt-3">Product Category</label>
+    <select name="category" id="category" class="form-select" multiple required>
+        <option value="Cleanser">Cleanser</option>
+        <option value="Toner">Toner</option>
+        <option value="Serum">Serum</option>
+        <option value="Moisturizer">Moisturizer</option>
+        <option value="Sunscreen">Sunscreen</option>
+        <option value="Eye Cream">Eye Cream</option>
+        <option value="Mask">Mask</option>
+        <option value="Exfoliant">Exfoliant</option>
+    </select>
+
+    
+
+    <label for="skinType" class="form-label mt-3">Product SkinType</label>
+    <select name="skinType" id="skinType" class="form-select" multiple required>
+        <option value="All skin types">All skin types</option>
+        <option value="Normal">Normal</option>
+        <option value="Oily">Oily</option>
+        <option value="Dry">Dry</option>
+        <option value="Combination">Combination</option>
+    </select>
+    
+  
+    
+    <label for="skinConcern" class="form-label mt-3">Product skinConcern</label>
+    <select name="skinConcern" id="skin-concern-select" class="form-select" multiple required>
+        <option value="Acne">Acne</option>
+        <option value="Hyperpigmentation">Hyperpigmentation</option>
+        <option value="Fine Lines & Wrinkles">Fine Lines & Wrinkles</option>
+        <option value="Redness">Redness</option>
+        <option value="Dullness">Dullness</option>
+        <option value="Dryness">Dryness</option>
+        <option value="Sun Protection">Sun Protection</option>
+        <option value="Pores">Pores</option>
+        <option value="Dark Spots">Dark Spots</option>
+        <option value="Dark Circles">Dark Circles</option>
+    </select>
+   
+   
+    
+    <!-- <label for="keyIngredients ">Product keyIngredients </label>
+    <input type="text" name="keyIngredients " id="keyIngredients " placeholder="Enter Product keyIngredients ">
+    <br>
+    <br> -->
+
+    <label for="productFormat" class="form-label mt-3">Product Base</label>
+    <select name="productFormat" id="productFormat" class="form-select" multiple required>
+        <option value="Cream">Cream</option>
+        <option value="Serum">Serum</option>
+        <option value="Gel">Gel</option>
+        <option value="Lotion">Lotion</option>
+        <option value="Oil">Oil</option>
+        <option value="Foam">Foam</option>
+        <option value="Balm">Balm</option>
+    </select>
+ 
+    <button class="btn btn-success mt-4">Add New</button>
+
+  </form>
+  </div>
+    
+</body>
+</html>

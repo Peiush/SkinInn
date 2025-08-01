@@ -1,0 +1,74 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row col-6 offset-4 mt-3 cart-title">
+    <h2 class="title">Product Added to <i><%= currentUser.username %>'s</i> Cart </h2>
+    <p class="subtitle offset-2">Your cart is listed below</p>
+    
+       
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 mt-5">
+    <% for(let item of cart.items) { %>
+        <% if (item.product) { %>
+     <div class="card col" style="width: 20rem; max-height: 550px; margin:3rem" >
+        <a href="/listings/<%= item.product.id %>" class="text-decoration-none text-dark">
+       <img src="<%= item.product.image.url %>" class="card-img-top mt-3" alt="Product-img" style="max-height: 250px; object-fit: contain;" onerror="this.onerror=null;this.src='https://placehold.co/600x600/F8F7F4/343a40?text=Image+Not+Found';">
+        <div class="card-body text-center">
+            <h5 class="card-title"><strong>Quantity:</strong> <%= item.quantity %></h5>
+            <h5 class="card-title"><strong> Price:</strong> &#8377; <%= item.product.price %></h5>
+            <h5 class="card-title"><strong>Product Name:</strong> <%= item.product.name %></h5>
+            <!-- <h5 class="card-title"><strong>Brand Name: <%= item.product.brand %></strong></h5>
+            <h5 class="card-title"><strong>Volume: <%= item.product.volume %> ml</strong></h5> -->
+            <h5 class="card-title"><strong>total Price:</strong> &#8377; <%= item.product.price * item.quantity %></h5>
+            
+        </div>
+        <div class="card-footer text-center d-flex justify-content-between">
+            <form action="/cart/<%=currentUser.id %>/checkout" method="post">
+                <input type="hidden" name="productId" value="<%= item.product.id %>">
+                <input type="hidden" name="productName" value="<%= item.product.name %>">
+                <input type="hidden" name="productPrice" value="<%= item.product.price %>">
+                <button class="btn btn-success btn-sm">Checkout</button>
+            </form>
+
+            <form action="/cart/<%=currentUser.id %>/items/<%= item.product.id %>?_method=DELETE" method="post">
+                <button class="btn btn-danger btn-sm">Remove</button>
+            </form>
+
+        </div>
+         </a>
+</div>
+        <% } else { %>
+            <div class="col">
+                <p class="text-center">Product not found</p>
+            </div>
+        <% } %>
+    <% } %>
+
+    
+</div>
+
+
+<div class="row  col-6 offset-4 mt-3 cart-total">
+<div class="row col-6 offset-3 mt-3 cart-summary">
+    <h4 class="text-center">Cart Summary</h4>
+    <p class="text-center"><strong>Total Products:</strong> <%= cart.items.reduce((total, item) => total + item.quantity, 0) %></p>
+    <p class="text-center"><strong>Total Amount:</strong> &#8377; <%= cart.items.reduce((total, item) => total + (item.product ? item.product.price * item.quantity : 0), 0) %></p>
+</div>
+
+<hr>
+<div class="text-center d-flex justify-content-between">
+
+<form action="/cart/<%=currentUser.id %>?_method=DELETE"  method="post" class="text-center mt-2">
+    <button class="btn btn-danger cart-btn col-2 mb-4">Clear Cart</button>
+</form>
+
+<form action="/cart/<%=currentUser.id %>/checkout" method="post">
+    <!-- -->
+    <button class="btn btn-success cart-btn">Checkout</button>
+</form>
+
+</div>
+
+</div>
+
+
